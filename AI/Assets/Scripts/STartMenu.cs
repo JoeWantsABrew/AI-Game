@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class STartMenu : MonoBehaviour
 {
-    public string GotoScene;
+    public List <string> GotoScene;
     
     public void ThisScene()
     {
-        SceneManager.LoadScene(GotoScene);
+        SceneManager.LoadScene(GotoScene[Random.Range(0, GotoScene.Count - 1)]);
     }
 
     public void Quitt()
