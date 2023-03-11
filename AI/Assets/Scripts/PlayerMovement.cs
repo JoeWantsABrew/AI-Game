@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public string SpiderTag;
 
     public GameObject HUD;
+    public Joystick Joystuck;
 
     private bool HasJump;
 
@@ -35,18 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerRB.velocity += (new Vector2(speed * Input.GetAxis("Horizontal"), 0));
+        PlayerRB.velocity += (new Vector2(speed * Joystuck.Horizontal, 0));
 
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            if (HasJump == true)
-            {
-                PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, Input.GetAxis("Vertical") * JumpPower));
-                HasJump = false;
-            }
-        }
+
         StarCount = PlayerPrefs.GetFloat("StarCount", 0);
-
+        HasJump = false;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -79,6 +75,14 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(this.gameObject);
                 Instantiate(DeathFX, transform.position, transform.rotation);
             }
+        }
+    }
+
+    public void Jump()
+    {
+        if (HasJump == true)
+        {
+            PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, Input.GetAxis("Vertical") * JumpPower));
         }
     }
 }
