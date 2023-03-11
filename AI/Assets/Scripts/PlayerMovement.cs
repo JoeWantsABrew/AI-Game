@@ -42,15 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         StarCount = PlayerPrefs.GetFloat("StarCount", 0);
-        HasJump = false;
+        HasJump = Physics2D.OverlapCircle(transform.position, 1.2f);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.tag == floorTag)
-        {
-            HasJump = true;
-        }
+
 
         if (collision.collider.tag == StarTag)
         {
@@ -82,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (HasJump == true)
         {
-            PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, Input.GetAxis("Vertical") * JumpPower));
+            PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, JumpPower));
         }
     }
 }
