@@ -8,7 +8,7 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     public TextMeshProUGUI scorecounter;
-    public float MaxStarCount;
+    public float MaxCannonBallCount;
     public GameObject WIN;
     public string thisScene;
     public Image HPBar;
@@ -22,11 +22,11 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        MaxStarCount = PlayerPrefs.GetFloat("MaxStarCount", 0);
+        MaxCannonBallCount = PlayerPrefs.GetFloat("MaxCannonBallCount", 0);
 
         var CurrentStarCount = PlayerPrefs.GetFloat("StarCount", 0);
 
-        scorecounter.text = "Health: " + CurrentStarCount * 100 + "/" + MaxStarCount * 100;
+        scorecounter.text = "Health: " + CurrentStarCount * 100 + "/" + MaxCannonBallCount * 100;
 
         if (CurrentStarCount <= 0)
         {
@@ -35,7 +35,7 @@ public class UI : MonoBehaviour
             scorecounter.gameObject.SetActive(false);
         }
 
-        float hp = (CurrentStarCount / MaxStarCount);
+        float hp = (CurrentStarCount / MaxCannonBallCount);
         HPBar.fillAmount = hp;
         Debug.Log("hp = " + hp);
     }
