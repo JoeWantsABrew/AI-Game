@@ -58,3 +58,6 @@ TagManager:
   - name: background
     uniqueID: 1856078995
     locked: 0
+  - name: Projectile
+    uniqueID: 2906460399
+    locked: 0
