@@ -22,7 +22,7 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        MaxCannonBallCount = PlayerPrefs.GetFloat("MaxCannonBallCount", 0);
+        MaxCannonBallCount = PlayerPrefs.GetFloat("MaxStarCount", 0);
 
         var CurrentStarCount = PlayerPrefs.GetFloat("StarCount", 0);
 

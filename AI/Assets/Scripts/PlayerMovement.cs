@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (HasJump == true)
+        if (true)
         {
             PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, JumpPower));
         }
