@@ -8,7 +8,8 @@ TagManager:
   - Star
   - DETH
   - Enmmy
-  - deadlyStar
+  - BossHere
+  - AntiBoss
   layers:
   - Default
   - TransparentFX

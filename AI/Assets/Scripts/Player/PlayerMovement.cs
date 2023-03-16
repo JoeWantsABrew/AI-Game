@@ -48,13 +48,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
 
-
-        if (collision.collider.tag == StarTag)
-        {
-            Instantiate(DeadlyStar, collision.collider.transform.position, collision.collider.transform.rotation);
-            Destroy(collision.gameObject);
-        }
-
         if (collision.collider.tag == DieTag)
         {
             DeathScreen.SetActive(true);

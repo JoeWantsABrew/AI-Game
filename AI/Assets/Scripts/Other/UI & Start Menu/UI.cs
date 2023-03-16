@@ -8,12 +8,14 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     public TextMeshProUGUI scorecounter;
-    public float MaxCannonBallCount;
+    public float MaxHealth;
     public GameObject WIN;
     public string thisScene;
     public Image HPBar;
     public AudioSource musicc;
     public Toggle toggg;
+    // text bubble
+    public TextMeshProUGUI StarPowerText;
 
     private void Start()
     {
@@ -22,22 +24,24 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        MaxCannonBallCount = PlayerPrefs.GetFloat("MaxStarCount", 0);
+        MaxHealth = PlayerPrefs.GetFloat("MaxBossHealth", 69);
 
-        var CurrentStarCount = PlayerPrefs.GetFloat("StarCount", 0);
+        var CurrentHealth = PlayerPrefs.GetFloat("BossHealth", 69);
 
-        scorecounter.text = "Health: " + CurrentStarCount * 100 + "/" + MaxCannonBallCount * 100;
+        scorecounter.text = "" + CurrentHealth;
 
-        if (CurrentStarCount <= 0)
+        if (CurrentHealth <= 0)
         {
             WIN.SetActive(true);
             Time.timeScale = 0;
             scorecounter.gameObject.SetActive(false);
         }
 
-        float hp = (CurrentStarCount / MaxCannonBallCount);
+        float hp = (CurrentHealth / MaxHealth);
         HPBar.fillAmount = hp;
         Debug.Log("hp = " + hp);
+        //sets the text bubble to the variable "starpower"
+        StarPowerText.text = "StarPower= " + PlayerPrefs.GetInt("StarPower");
     }
 
     public void Restart()

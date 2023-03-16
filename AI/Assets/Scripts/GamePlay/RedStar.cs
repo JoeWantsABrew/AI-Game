@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StarLaunch : MonoBehaviour
+public class RedStar : MonoBehaviour
 {
     public Transform target;
     public Rigidbody2D rb;
@@ -12,7 +12,7 @@ public class StarLaunch : MonoBehaviour
     
     private void Start()
     {
-        GameObject thing = GameObject.Find("Spooder");
+        GameObject thing = GameObject.FindObjectOfType<SPider>().gameObject;
         target = thing.GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -27,8 +27,6 @@ public class StarLaunch : MonoBehaviour
     {
         if (collision.collider.tag == SpiderTag)
         {
-            PlayerPrefs.SetFloat("StarCount", PlayerPrefs.GetFloat("StarCount", 0) - 1);
-            Destroy(this.gameObject);
             Instantiate(boomFX, transform.position, transform.rotation);
         }
     }
