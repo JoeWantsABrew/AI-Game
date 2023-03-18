@@ -24,9 +24,9 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        MaxHealth = PlayerPrefs.GetFloat("MaxBossHealth", 69);
+        MaxHealth = PlayerPrefs.GetInt("MaxBossHealth", 69);
 
-        var CurrentHealth = PlayerPrefs.GetFloat("BossHealth", 69);
+        var CurrentHealth = PlayerPrefs.GetInt("BossHealth", 69);
 
         scorecounter.text = "" + CurrentHealth;
 
