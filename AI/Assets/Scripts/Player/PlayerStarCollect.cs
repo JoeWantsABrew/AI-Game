@@ -12,7 +12,7 @@ public class PlayerStarCollect : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //checks if the tag is "StarTag"
-        if (collision.collider.tag == StarTag)
+        if (collision.collider.CompareTag(StarTag))
         {
             //every time the star is touched, 5 starpower is added
             //"playerprefs" is a thing that you can use to save variables on a device(like numbers)

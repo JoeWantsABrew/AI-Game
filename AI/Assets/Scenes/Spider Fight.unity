@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 13700021}
   - component: {fileID: 13700020}
   - component: {fileID: 13700024}
+  - component: {fileID: 13700025}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -412,6 +413,19 @@ MonoBehaviour:
   SpiderTag: Enmmy
   HUD: {fileID: 158632906}
   Joystuck: {fileID: 1282436388}
+--- !u!114 &13700025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13700019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5226a1b9ec5bd846a419a685223f067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarTag: Star
 --- !u!1 &17374652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &135060105
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &210902052
 Transform:
   m_ObjectHideFlags: 0
@@ -2269,7 +2283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &264753550
 Transform:
   m_ObjectHideFlags: 0
@@ -26773,7 +26787,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773455980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -27963,7 +27977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &970118818
 Transform:
   m_ObjectHideFlags: 0
@@ -30029,7 +30043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1312374554
 Transform:
   m_ObjectHideFlags: 0
@@ -30551,7 +30565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1381384821
 Transform:
   m_ObjectHideFlags: 0
@@ -32267,7 +32281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1643220898
 Transform:
   m_ObjectHideFlags: 0
@@ -33109,7 +33123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1747213538
 Transform:
   m_ObjectHideFlags: 0
@@ -33632,7 +33646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1868724196
 Transform:
   m_ObjectHideFlags: 0
@@ -34351,7 +34365,7 @@ MonoBehaviour:
   HPBar: {fileID: 816127051}
   musicc: {fileID: 311016939}
   toggg: {fileID: 581618390}
-  StarPowerText: {fileID: 0}
+  StarPowerText: {fileID: 1395660703}
 --- !u!114 &1977480416
 MonoBehaviour:
   m_ObjectHideFlags: 0

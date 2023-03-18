@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour
     public int Phases;
     public int currentPhase;
     public string HurtTag;
+    private bool valid = true;
 
     public void Update()
     {
@@ -20,9 +21,19 @@ public class HealthManager : MonoBehaviour
     {
         if (collision.collider.CompareTag(HurtTag))
         {
-            DamageDealer Stats = collision.collider.GetComponent<DamageDealer>();
-            BossHealth[currentPhase - 1] -= Stats.Damage;
-            Destroy(collision.gameObject);
+            if (valid)
+            {
+                valid = false;
+                Invoke("REValidate", 0.2f);
+                DamageDealer Stats = collision.collider.GetComponent<DamageDealer>();
+                BossHealth[currentPhase - 1] -= Stats.Damage;
+                Destroy(collision.gameObject);
+            }
         }
+    }
+
+    public void REValidate()
+    {
+        valid = true;
     }
 }

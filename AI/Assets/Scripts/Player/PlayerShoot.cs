@@ -14,6 +14,10 @@ public class PlayerShoot : MonoBehaviour
 
     public void Fire()
     {
-        Instantiate(Bullet, Player.transform.position, Quaternion.identity);
+        if (PlayerPrefs.GetInt("StarPower") >= 5)
+        {
+            Instantiate(Bullet, Player.transform.position, Quaternion.identity);
+            PlayerPrefs.SetInt("StarPower", PlayerPrefs.GetInt("StarPower") - 5);
+        }
     }
 }
