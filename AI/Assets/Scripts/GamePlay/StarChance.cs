@@ -5,14 +5,25 @@ using UnityEngine;
 public class StarChance : MonoBehaviour
 {
     public GameObject Starr;
+    public bool HasStar;
+    public GameObject CurrentStar;
     
     void Start()
     {
         if (Random.Range(0, 3) == 2)
         {
             Instantiate(Starr, transform.position, transform.rotation);
-            PlayerPrefs.SetFloat("MaxStarCount", PlayerPrefs.GetFloat("MaxStarCount", 0) + 1);
-            PlayerPrefs.SetFloat("StarCount", PlayerPrefs.GetFloat("StarCount", 0) + 1);
+            HasStar = true;
         }
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    public void CreateStar()
+    {
+        CurrentStar = Instantiate(Starr, transform.position, transform.rotation);
     }
 }
