@@ -41,7 +41,7 @@ public class UI : MonoBehaviour
         HPBar.fillAmount = hp;
         Debug.Log("hp = " + hp);
         //sets the text bubble to the variable "starpower"
-        StarPowerText.text = "StarPower= " + PlayerPrefs.GetInt("StarPower");
+        StarPowerText.text = "" + PlayerPrefs.GetInt("StarPower");
     }
 
     public void Restart()

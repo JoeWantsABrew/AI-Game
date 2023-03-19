@@ -12,18 +12,26 @@ public class StarChance : MonoBehaviour
     {
         if (Random.Range(0, 3) == 2)
         {
-            Instantiate(Starr, transform.position, transform.rotation);
+            CurrentStar = Instantiate(Starr, transform.position, transform.rotation);
             HasStar = true;
         }
     }
 
     private void Update()
     {
-        
+        if (HasStar == true)
+        {
+            if (CurrentStar = null)
+            {
+                HasStar = false;
+                Invoke("CreateStar", 25);
+            }
+        }
     }
 
     public void CreateStar()
     {
         CurrentStar = Instantiate(Starr, transform.position, transform.rotation);
+        HasStar = true;
     }
 }
