@@ -14,6 +14,7 @@ public class StarChance : MonoBehaviour
         {
             CurrentStar = Instantiate(Starr, transform.position, transform.rotation);
             HasStar = true;
+            Time.timeScale = 1;
         }
     }
 
@@ -21,7 +22,7 @@ public class StarChance : MonoBehaviour
     {
         if (HasStar == true)
         {
-            if (CurrentStar = null)
+            if (CurrentStar == null)
             {
                 HasStar = false;
                 Invoke("CreateStar", 25);

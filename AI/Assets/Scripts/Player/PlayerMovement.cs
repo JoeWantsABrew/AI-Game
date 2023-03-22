@@ -27,8 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetFloat("StarCount", 0);
-        PlayerPrefs.SetFloat("MaxStarCount", 0);
+        PlayerPrefs.SetFloat("StarPower", 0);
     }
 
     private void Start()
@@ -39,9 +38,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerRB.velocity += (new Vector2(speed * Joystuck.Horizontal, 0));
-
-
-        StarCount = PlayerPrefs.GetFloat("StarCount", 0);
         HasJump = Physics2D.OverlapCircle(transform.position, 1.2f);
     }
 
