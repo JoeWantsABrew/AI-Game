@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public string DieTag;
     public GameObject DeathScreen;
     public GameObject DeathFX;
-    public string SpiderTag;
+    public string BossTag;
 
     public GameObject HUD;
     public Joystick Joystuck;
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(this.gameObject);
             Instantiate(DeathFX, transform.position, transform.rotation);
         }
-        if (collision.collider.tag == SpiderTag)
+        if (collision.collider.tag == BossTag)
         {
             SPider spood = collision.collider.GetComponent<SPider>();
             if (spood.CanHurt)

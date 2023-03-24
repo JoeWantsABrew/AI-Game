@@ -10,6 +10,7 @@ TagManager:
   - Enmmy
   - BossHere
   - AntiBoss
+  - CameraRig
   layers:
   - Default
   - TransparentFX

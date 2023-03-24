@@ -435,7 +435,7 @@ MonoBehaviour:
   DieTag: DETH
   DeathScreen: {fileID: 1956636724}
   DeathFX: {fileID: 2136422548390279952, guid: d783611d029d56b4d830986d8f910e13, type: 3}
-  SpiderTag: Enmmy
+  BossTag: Enmmy
   HUD: {fileID: 158632906}
   Joystuck: {fileID: 1282436388}
 --- !u!114 &13700025
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 85496260}
   m_Layer: 0
   m_Name: CamRig
-  m_TagString: Untagged
+  m_TagString: CameraRig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26918,6 +26918,9 @@ MonoBehaviour:
   Phases: 1
   currentPhase: 1
   HurtTag: AntiBoss
+  alive: 1
+  DeathAnimation: {fileID: 8027223204979256835, guid: ed2ce23d2f9d8254d8acc86db82e79ea, type: 3}
+  DestroyOnDeath: 1
 --- !u!1 &787992427
 GameObject:
   m_ObjectHideFlags: 0

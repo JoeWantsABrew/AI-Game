@@ -32,9 +32,7 @@ public class UI : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            WIN.SetActive(true);
-            Time.timeScale = 0;
-            scorecounter.gameObject.SetActive(false);
+            Invoke("Win", 5);
         }
 
         float hp = (CurrentHealth / MaxHealth);
@@ -62,5 +60,11 @@ public class UI : MonoBehaviour
         {
             musicc.volume = 0f;
         }
+    }
+    public void Win()
+    {
+        WIN.SetActive(true);
+        Time.timeScale = 0;
+        scorecounter.gameObject.SetActive(false);
     }
 }
