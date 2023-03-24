@@ -48,17 +48,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 1856078995
+    locked: 0
+  - name: background decor
+    uniqueID: 485010697
+    locked: 0
   - name: ForeGround
     uniqueID: 3928535595
     locked: 0
   - name: ForeGround decor
     uniqueID: 1192862193
-    locked: 0
-  - name: background decor
-    uniqueID: 485010697
-    locked: 0
-  - name: background
-    uniqueID: 1856078995
     locked: 0
   - name: Projectile
     uniqueID: 2906460399

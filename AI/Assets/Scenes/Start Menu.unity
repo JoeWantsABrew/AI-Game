@@ -6193,7 +6193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a5214f2cb412743b0693ffbcd917f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GotoScene: Spider Fight
+  GotoScene: OverWorld
 --- !u!1 &1462991355
 GameObject:
   m_ObjectHideFlags: 0

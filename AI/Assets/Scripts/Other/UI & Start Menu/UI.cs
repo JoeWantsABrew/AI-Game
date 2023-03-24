@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public float MaxHealth;
     public GameObject WIN;
     public string thisScene;
+    public string OverWorld = "OverWorld";
     public Image HPBar;
     public AudioSource musicc;
     public Toggle toggg;
@@ -42,6 +43,10 @@ public class UI : MonoBehaviour
         StarPowerText.text = "" + PlayerPrefs.GetInt("StarPower");
     }
 
+    public void GoBackToWorld()
+    {
+        SceneManager.LoadScene(OverWorld);
+    }
     public void Restart()
     {
         SceneManager.LoadScene(thisScene);
