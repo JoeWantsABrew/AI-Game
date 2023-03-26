@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class HealthManager : MonoBehaviour
     public bool alive = true;
     public GameObject DeathAnimation;
     public bool DestroyOnDeath;
+    public UnityEvent[] NextPhase;
 
     public void Update()
     {
@@ -31,6 +33,15 @@ public class HealthManager : MonoBehaviour
                 if (DestroyOnDeath)
                 {
                     Destroy(this.gameObject);
+                }
+            }
+            if (BossHealth[currentPhase - 1] <= 0)
+            {
+                if (currentPhase != Phases)
+                {
+                    NextPhase[currentPhase].Invoke();
+                    currentPhase += 1;
+                    BossHealth[currentPhase - 1] = MaxBossHealth[currentPhase -1];
                 }
             }
         }
