@@ -9,11 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D PlayerRB;
     public float speed;
     public float JumpPower;
-    public string floorTag;
-
-    public string StarTag;
-    public float StarCount;
-    public GameObject DeadlyStar;
 
     public string DieTag;
     public GameObject DeathScreen;
@@ -23,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject HUD;
     public Joystick Joystuck;
 
-    private bool HasJump;
 
     private void Awake()
     {
@@ -33,12 +27,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         PlayerRB = GetComponent<Rigidbody2D>();
+        Joystuck = GameObject.FindObjectOfType<Joystick>();
+        HUD = GameObject.Find("HUD");
+        DeathScreen = GameObject.Find("YOUDIED");
     }
 
     private void FixedUpdate()
     {
         PlayerRB.velocity += (new Vector2(speed * Joystuck.Horizontal, 0));
-        HasJump = Physics2D.OverlapCircle(transform.position, 1.2f);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

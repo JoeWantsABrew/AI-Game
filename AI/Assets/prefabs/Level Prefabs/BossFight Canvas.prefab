@@ -3106,7 +3106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e84b8efc1b3b4449193bdec235d8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorecounter: {fileID: 376371387829168177}
+  healthCounter: {fileID: 376371387829168177}
   MaxHealth: 0
   WIN: {fileID: 4518980467438107820}
   thisScene: Spider Fight

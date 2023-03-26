@@ -15,11 +15,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CrossTerrain
   - Water
   - UI
   - Tile
-  - Spider
+  - Boss
   - Star
   - deadlystar
   - 

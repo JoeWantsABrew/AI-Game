@@ -7,7 +7,7 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
-    public TextMeshProUGUI scorecounter;
+    public TextMeshProUGUI healthCounter;
     public float MaxHealth;
     public GameObject WIN;
     public string thisScene;
@@ -29,7 +29,7 @@ public class UI : MonoBehaviour
 
         var CurrentHealth = PlayerPrefs.GetInt("BossHealth", 69);
 
-        scorecounter.text = "" + CurrentHealth;
+        healthCounter.text = "" + CurrentHealth;
 
         if (CurrentHealth <= 0)
         {
@@ -70,6 +70,6 @@ public class UI : MonoBehaviour
     {
         WIN.SetActive(true);
         Time.timeScale = 0;
-        scorecounter.gameObject.SetActive(false);
+        healthCounter.gameObject.SetActive(false);
     }
 }
