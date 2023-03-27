@@ -11,12 +11,13 @@ public class VendingBossPhase1 : MonoBehaviour
     public float DashPower;
 
     public GameObject Target;
+    public GameObject Soda;
 
     private void Start()
     {
         Target = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating("Attack", 5, 3);
+        InvokeRepeating("Attack", 7, 5);
     }
 
     void FixedUpdate()
@@ -50,15 +51,26 @@ public class VendingBossPhase1 : MonoBehaviour
         }
         else
         {
-            rb.velocity = (Target.transform.position - transform.position).normalized * DashPower;
+            if (Random.Range(1, 3) > 1)
+            {
+                rb.velocity = (Target.transform.position - transform.position).normalized * DashPower;
+            }
+            else
+            {
+                RangedAttack();
+            }
         }
     }
 
     public void RangedAttack()
     {
-        if (Random.Range(1, 3) > 2)
+        if (Random.Range(1, 3) > 1)
         {
-
+            Debug.Log("Chips");
+        }
+        else
+        {
+            Instantiate(Soda, transform.position, transform.rotation);
         }
     }
 }

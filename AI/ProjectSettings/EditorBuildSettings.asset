@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Spider Fight.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Vending Machine.unity
+    guid: 9ef0115aab4475d4f9f1ddf1d8c24b84
   m_configObjects: {}

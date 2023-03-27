@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerRB = GetComponent<Rigidbody2D>();
         Joystuck = GameObject.FindObjectOfType<Joystick>();
         HUD = GameObject.Find("HUD");
-        DeathScreen = GameObject.Find("YOUDIED");
     }
 
     private void FixedUpdate()
