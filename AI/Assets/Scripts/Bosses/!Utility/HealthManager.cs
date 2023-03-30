@@ -54,10 +54,10 @@ public class HealthManager : MonoBehaviour
             if (valid)
             {
                 valid = false;
-                Invoke("REValidate", 0.2f);
                 DamageDealer Stats = collision.collider.GetComponent<DamageDealer>();
                 BossHealth[currentPhase - 1] -= Stats.Damage;
                 Destroy(collision.gameObject);
+                REValidate();
             }
         }
     }

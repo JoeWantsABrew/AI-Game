@@ -6,18 +6,17 @@ public class VendingBossPhase1 : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    public float MaxWalkSpeed;
     public float WalkSpeed;
-    public float DashPower;
 
     public GameObject Target;
     public GameObject Soda;
+    public GameObject Chips;
 
     private void Start()
     {
         Target = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating("Attack", 7, 5);
+        InvokeRepeating("RangedAttack", 7, 5);
     }
 
     void FixedUpdate()
@@ -27,46 +26,16 @@ public class VendingBossPhase1 : MonoBehaviour
 
     public void Walk()
     {
-        if (Target.transform.position.x < transform.position.x)
-        {
-            if (rb.velocity.magnitude < MaxWalkSpeed)
-            {
-                rb.velocity = new Vector2(-WalkSpeed + rb.velocity.x, rb.velocity.y);
-            }
-        }
-        else
-        {
-            if (rb.velocity.magnitude < MaxWalkSpeed)
-            {
-                rb.velocity = new Vector2(WalkSpeed + rb.velocity.x, rb.velocity.y);
-            }
-        }
+        rb.velocity = (Target.transform.position - transform.position).normalized * WalkSpeed;
     }
 
-    public void Attack()
-    {
-        if ((transform.position - Target.transform.position).magnitude > 20f)
-        {
-            RangedAttack();
-        }
-        else
-        {
-            if (Random.Range(1, 3) > 1)
-            {
-                rb.velocity = (Target.transform.position - transform.position).normalized * DashPower;
-            }
-            else
-            {
-                RangedAttack();
-            }
-        }
-    }
+
 
     public void RangedAttack()
     {
         if (Random.Range(1, 3) > 1)
         {
-            Debug.Log("Chips");
+            Instantiate(Chips, transform.position, transform.rotation);
         }
         else
         {
