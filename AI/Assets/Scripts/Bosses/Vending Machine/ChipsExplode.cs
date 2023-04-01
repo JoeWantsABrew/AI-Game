@@ -22,6 +22,7 @@ public class ChipsExplode : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Transform Target = GameObject.FindObjectOfType<PlayerMovement>().transform;
         rb.velocity = (Target.position - transform.position).normalized * force;
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg);
         InvokeRepeating("Explode", fuse, 0.01f);
         ChoseChipCount = Random.Range(MinChipCount - 1, MaxChipCount);
     }

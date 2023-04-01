@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5015640685848272041}
   - component: {fileID: 7224286433114677174}
   - component: {fileID: 4410450373949935793}
+  - component: {fileID: 5766795667347192259}
   m_Layer: 6
   m_Name: chip bag
   m_TagString: DETH
@@ -29,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 4065099996267012404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.32, y: 6.98, z: 0}
-  m_LocalScale: {x: 1.8696976, y: 1.768965, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8800479085011585891
 SpriteRenderer:
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.30854297, g: 0.7830189, b: 0.30582055, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b25098b6db467924f98855e798205b60, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,18 +120,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000011920929, y: 0.0029753149}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.75, y: 1.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7656779, y: 1.7795258}
   m_EdgeRadius: 0
 --- !u!50 &7224286433114677174
 Rigidbody2D:
@@ -158,7 +159,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4410450373949935793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +178,24 @@ MonoBehaviour:
   force: 16
   rb: {fileID: 0}
   Chip: {fileID: 8776175879825603493, guid: 820da5ce1895e2644a057b90a4c72a95, type: 3}
+--- !u!95 &5766795667347192259
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4065099996267012404}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97d0e291862bc114493083abd15a7b67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
