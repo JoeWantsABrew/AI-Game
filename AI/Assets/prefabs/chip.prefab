@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9033278037519407454}
   - component: {fileID: 2047801056287255463}
   - component: {fileID: 3801276683690789207}
+  - component: {fileID: 3880450867886782747}
   m_Layer: 6
   m_Name: chip
   m_TagString: DETH
@@ -187,3 +188,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3880450867886782747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776175879825603493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0340180e52398774ea7cf2675c5c6867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
