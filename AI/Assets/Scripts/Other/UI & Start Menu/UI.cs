@@ -20,7 +20,7 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -33,7 +33,10 @@ public class UI : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            Invoke("Win", 5);
+            if(PlayerPrefs.GetString("FinalPhase") == "true")
+            {
+                Invoke("Win", 5);
+            }
         }
 
         float hp = (CurrentHealth / MaxHealth);
@@ -71,5 +74,14 @@ public class UI : MonoBehaviour
         WIN.SetActive(true);
         Time.timeScale = 0;
         healthCounter.gameObject.SetActive(false);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1;
     }
 }

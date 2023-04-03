@@ -25246,10 +25246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9980170f20a7044bdec4e7bbb57e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossHealth: e8030000
+  BossHealth: 1000
   MaxBossHealth: e8030000
-  Phases: 1
-  currentPhase: 1
+  Phases: 0
+  currentPhase: 0
   HurtTag: AntiBoss
   alive: 1
   DeathAnimation: {fileID: 8027223204979256835, guid: ed2ce23d2f9d8254d8acc86db82e79ea, type: 3}

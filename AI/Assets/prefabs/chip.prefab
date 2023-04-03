@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2047801056287255463}
   - component: {fileID: 3801276683690789207}
   - component: {fileID: 3880450867886782747}
+  - component: {fileID: -7504986451308590958}
   m_Layer: 6
   m_Name: chip
   m_TagString: DETH
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -366431701
+  m_SortingLayer: 3
+  m_SortingOrder: 103
   m_Sprite: {fileID: 21300000, guid: ebe8502cc2a1e4442b0040f0177238b0, type: 3}
   m_Color: {r: 1, g: 0.8985352, b: 0, a: 1}
   m_FlipX: 0
@@ -198,5 +199,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0340180e52398774ea7cf2675c5c6867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7504986451308590958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776175879825603493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce02d867c634994baaf2a99597b15c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

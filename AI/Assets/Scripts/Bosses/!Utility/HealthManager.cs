@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
-    public int[] BossHealth;
+    public int BossHealth;
     public int[] MaxBossHealth;
     public int Phases;
     public int currentPhase;
@@ -18,30 +18,47 @@ public class HealthManager : MonoBehaviour
 
     public void Update()
     {
-        PlayerPrefs.SetInt("MaxBossHealth", MaxBossHealth[currentPhase - 1]);
-        PlayerPrefs.SetInt("BossHealth", BossHealth[currentPhase - 1]);
+        PlayerPrefs.SetInt("MaxBossHealth", MaxBossHealth[currentPhase]);
+        PlayerPrefs.SetInt("BossHealth", BossHealth);
+        if (currentPhase == Phases)
+        {
+            PlayerPrefs.SetString("FinalPhase", "true");
+        }
+        else
+        {
+            PlayerPrefs.SetString("FinalPhase", "false");
+        }
 
         if (alive)
         {
-            if (BossHealth[Phases - 1] <= 0)
-            {
-                GameObject.Find("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                alive = false;
-                CamFollow kam = GameObject.FindObjectOfType<CamFollow>();
-                kam.target = Instantiate(DeathAnimation, transform.position, transform.rotation).transform;
-                kam.CamSpeed = 2;
-                if (DestroyOnDeath)
-                {
-                    Destroy(this.gameObject);
-                }
-            }
-            if (BossHealth[currentPhase - 1] <= 0)
+            if (BossHealth <= 0)
             {
                 if (currentPhase != Phases)
                 {
-                    NextPhase[currentPhase].Invoke();
                     currentPhase += 1;
-                    BossHealth[currentPhase - 1] = MaxBossHealth[currentPhase -1];
+                    alive = false;
+                    BossHealth = MaxBossHealth[currentPhase];
+                    alive = true;
+                    NextPhase[currentPhase].Invoke();
+                }
+                else
+                {
+                    ProjectileHere[] Projectiles = GameObject.FindObjectsOfType<ProjectileHere>();
+                    foreach (ProjectileHere thingy in Projectiles)
+                    {
+                        Destroy(thingy.gameObject);
+                    }
+
+                    if (DestroyOnDeath)
+                    {
+                        Destroy(this.gameObject);
+                    }
+
+                    GameObject.Find("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    alive = false;
+                    CamFollow kam = GameObject.FindObjectOfType<CamFollow>();
+                    kam.target = Instantiate(DeathAnimation, transform.position, transform.rotation).transform;
+                    kam.CamSpeed = 2;
                 }
             }
         }
@@ -55,7 +72,7 @@ public class HealthManager : MonoBehaviour
             {
                 valid = false;
                 DamageDealer Stats = collision.collider.GetComponent<DamageDealer>();
-                BossHealth[currentPhase - 1] -= Stats.Damage;
+                BossHealth -= Stats.Damage;
                 Destroy(collision.gameObject);
                 REValidate();
             }
@@ -65,5 +82,10 @@ public class HealthManager : MonoBehaviour
     public void REValidate()
     {
         valid = true;
+    }
+
+    private void Start()
+    {
+        PlayerPrefs.SetString("FinalPhase", "false");
     }
 }
