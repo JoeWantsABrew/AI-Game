@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject DeathScreen;
     public GameObject DeathFX;
     public string BossTag;
+    public AudioSource JumpFx;
 
     public GameObject HUD;
     public Joystick Joystuck;
@@ -64,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
         if (true)
         {
             PlayerRB.velocity = (new Vector2(PlayerRB.velocity.x, JumpPower));
+            float Pitchy = UnityEngine.Random.Range(0.8f, 1.2f);
+            JumpFx.pitch = Pitchy;
+            JumpFx.Play();
         }
     }
 }
