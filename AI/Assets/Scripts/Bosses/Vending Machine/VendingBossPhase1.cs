@@ -11,6 +11,8 @@ public class VendingBossPhase1 : MonoBehaviour
     public GameObject Target;
     public GameObject Soda;
     public GameObject Chips;
+    public HealthManager health;
+    public GameObject Transition;
 
     public Animator anim;
     private string State = "MachineDance";
@@ -22,12 +24,16 @@ public class VendingBossPhase1 : MonoBehaviour
         InvokeRepeating(nameof(RangedAttack), 7, 5);
         InvokeRepeating(nameof(AttackAnim), 6.5f, 5);
         anim = GetComponent<Animator>();
+        health = GetComponent<HealthManager>();
     }
 
     void FixedUpdate()
     {
-        Walk();
-        anim.Play(State);
+        if (health.currentPhase == 0)
+        {
+            Walk();
+            anim.Play(State);
+        }
     }
 
     public void Walk()
@@ -46,26 +52,48 @@ public class VendingBossPhase1 : MonoBehaviour
 
 
     public void RangedAttack()
-    {      
-        if (Random.Range(1, 3) > 1)
+    {
+        if (health.currentPhase == 0)
         {
-            Instantiate(Chips, transform.position, transform.rotation);
+            if (Random.Range(1, 3) > 1)
+            {
+                Instantiate(Chips, transform.position, transform.rotation);
+            }
+            else
+            {
+                Instantiate(Soda, transform.position, transform.rotation);
+            }
         }
         else
         {
-            Instantiate(Soda, transform.position, transform.rotation);
+            CancelInvoke();
         }
     }
 
     public void AttackAnim()
     {
-        State = "MachineAttack1";
-        Invoke(nameof(StopWalking), 1.1f);
+        if (health.currentPhase == 0)
+        {
+            State = "MachineAttack1";
+            Invoke(nameof(StopWalking), 1.1f);
+        }
     }
     
     public void StopWalking()
     {
         State = "MachineDance";
         Debug.Log("Animation???");
+    }
+
+    public void Phase2Start()
+    {
+        GetComponent<VendingMachinePhase2>().Begin();
+        Transition.SetActive(true);
+        Invoke(nameof(DeactivateTrans), 1.2f);
+    }
+
+    public void DeactivateTrans()
+    {
+        Destroy(Transition.gameObject);
     }
 }
