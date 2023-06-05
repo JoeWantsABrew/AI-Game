@@ -14,6 +14,7 @@ public class VendingMachinePhase2 : MonoBehaviour
     
     private Vector2 Desire;
     private Vector2 PlayerLoc;
+    private bool Begun = false;
 
     private void Start()
     {
@@ -37,11 +38,15 @@ public class VendingMachinePhase2 : MonoBehaviour
         transform.position = GoHere.position;
         Face.SetActive(true);
         PlayerLoc = Target.transform.position;
+        Begun = true;
     }
 
     private void FixedUpdate()
     {
-        Walk();
+        if (Begun)
+        {
+            Walk();
+        }
     }
 
     public void Walk()
