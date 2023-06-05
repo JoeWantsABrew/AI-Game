@@ -11,6 +11,6 @@ public class RotateTowards : MonoBehaviour
     {
 
         Vector2 Delta = (Target.position - transform.position).normalized;
-        transform.rotation = Quaternion.Euler(0, 0, (Mathf.Atan2(Delta.y, Delta.x)) * Mathf.Rad2Deg);
+        transform.rotation = Quaternion.Euler(0, 0, ((Mathf.Atan2(Delta.y, Delta.x)) * Mathf.Rad2Deg) + 180);
     }
 }

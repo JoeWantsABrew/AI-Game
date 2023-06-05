@@ -36,8 +36,8 @@ public class HealthManager : MonoBehaviour
                 if (currentPhase != Phases)
                 {
                     NextPhase[currentPhase].Invoke();
-                    currentPhase += 1;
                     alive = false;
+                    currentPhase += 1;
                     BossHealth = MaxBossHealth[currentPhase];
                     alive = true;
                 }

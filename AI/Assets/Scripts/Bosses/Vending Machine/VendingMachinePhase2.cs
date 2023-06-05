@@ -14,12 +14,13 @@ public class VendingMachinePhase2 : MonoBehaviour
     
     private Vector2 Desire;
     private Vector2 PlayerLoc;
-    private bool Begun = false;
+    private bool Begun;
 
     private void Start()
     {
         Target = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         rb = GetComponent<Rigidbody2D>();
+        Begun = false;
     }
 
     public void Begin()
@@ -43,7 +44,7 @@ public class VendingMachinePhase2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Begun)
+        if (Begun == true)
         {
             Walk();
         }
@@ -53,7 +54,7 @@ public class VendingMachinePhase2 : MonoBehaviour
     {
         Vector2 MyPos = transform.position;
         rb.velocity = (PlayerLoc - MyPos).normalized * Speed;
-        if ((PlayerLoc - MyPos).magnitude < 1)
+        if ((PlayerLoc - MyPos).magnitude < 5)
         {
             Invoke(nameof(AlternateWalk), MoveInterval);
         }
