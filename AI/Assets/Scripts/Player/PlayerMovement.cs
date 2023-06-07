@@ -19,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject HUD;
     public Joystick Joystuck;
 
+    public AudioSource Music;
+
 
     private void Awake()
     {
         PlayerPrefs.SetFloat("StarPower", 0);
+        Time.timeScale = 1;
     }
 
     private void Start()
@@ -46,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
             HUD.SetActive(false);
             Destroy(this.gameObject);
             Instantiate(DeathFX, transform.position, transform.rotation);
+            Music.pitch = 0.4f;
+            Time.timeScale = 0;
         }
         if (collision.collider.tag == BossTag)
         {
@@ -56,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
                 HUD.SetActive(false);
                 Destroy(this.gameObject);
                 Instantiate(DeathFX, transform.position, transform.rotation);
+                Music.pitch = 0.4f;
+                Time.timeScale = 0;
             }
         }
     }
