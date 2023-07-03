@@ -11,10 +11,12 @@ public class VendingMachinePhase2 : MonoBehaviour
     public float Speed;
     public Rigidbody2D rb;
     public float MoveInterval;
+    public DropSnacks Snacker;
     
     private Vector2 Desire;
     private Vector2 PlayerLoc;
     private bool Begun;
+
 
     private void Start()
     {
@@ -40,6 +42,7 @@ public class VendingMachinePhase2 : MonoBehaviour
         Face.SetActive(true);
         PlayerLoc = Target.transform.position;
         Begun = true;
+        Snacker.RealStart();
     }
 
     private void FixedUpdate()

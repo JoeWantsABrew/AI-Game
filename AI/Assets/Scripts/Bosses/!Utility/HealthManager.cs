@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour
         {
             if (BossHealth <= 0)
             {
-                if (currentPhase != Phases)
+                if (PlayerPrefs.GetString("FinalPhase") == "false")
                 {
                     NextPhase[currentPhase].Invoke();
                     alive = false;
