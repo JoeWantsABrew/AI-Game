@@ -89,11 +89,5 @@ public class VendingBossPhase1 : MonoBehaviour
     {
         GetComponent<VendingMachinePhase2>().Begin();
         Transition.SetActive(true);
-        Invoke(nameof(DeactivateTrans), 1.2f);
-    }
-
-    public void DeactivateTrans()
-    {
-        Destroy(Transition.gameObject);
     }
 }

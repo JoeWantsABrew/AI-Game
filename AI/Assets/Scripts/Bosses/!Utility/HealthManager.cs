@@ -15,6 +15,7 @@ public class HealthManager : MonoBehaviour
     public GameObject DeathAnimation;
     public bool DestroyOnDeath;
     public UnityEvent[] NextPhase;
+    public UnityEvent OnHit;
 
     public void Update()
     {
@@ -74,6 +75,7 @@ public class HealthManager : MonoBehaviour
                 DamageDealer Stats = collision.collider.GetComponent<DamageDealer>();
                 BossHealth -= Stats.Damage;
                 Destroy(collision.gameObject);
+                OnHit.Invoke();
                 REValidate();
             }
         }
