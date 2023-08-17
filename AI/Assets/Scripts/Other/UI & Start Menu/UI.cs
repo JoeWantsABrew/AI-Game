@@ -18,9 +18,24 @@ public class UI : MonoBehaviour
     // text bubble
     public TextMeshProUGUI StarPowerText;
 
-    private void Start()
+    public bool StartAnim;
+
+    public void Start()
     {
         Time.timeScale = 1;
+        if (StartAnim)
+        {
+            CamFollow camer = FindObjectOfType<CamFollow>();
+            camer.target = FindObjectOfType<HealthManager>().gameObject.transform;
+            Invoke(nameof(FocusPlayer), 2f);
+            Debug.Log("Camera Moved?");
+        }
+    }
+
+    public void FocusPlayer()
+    {
+        CamFollow camer = FindObjectOfType<CamFollow>();
+        camer.target = FindObjectOfType<PlayerMovement>().gameObject.transform;
     }
 
     private void Update()

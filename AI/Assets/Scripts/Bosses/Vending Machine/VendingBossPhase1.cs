@@ -17,21 +17,31 @@ public class VendingBossPhase1 : MonoBehaviour
     public Animator anim;
     private string State = "MachineDance";
 
+
     private void Start()
     {
         Target = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating(nameof(RangedAttack), 7, 5);
-        InvokeRepeating(nameof(AttackAnim), 6.5f, 5);
+        Invoke(nameof(StartAnimation), 1.5f);
         anim = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
+        State = "Machine Spawn";
+
+    }
+
+    public void StartAnimation()
+    {
+        InvokeRepeating(nameof(RangedAttack), 7, 5);
+        InvokeRepeating(nameof(AttackAnim), 6.5f, 5);
+        State = "MachineDance";
+
     }
 
     void FixedUpdate()
     {
         if (health.currentPhase == 0)
         {
-            Walk();
+            Invoke(nameof(Walk), 1.5f);
             anim.Play(State);
         }
     }
